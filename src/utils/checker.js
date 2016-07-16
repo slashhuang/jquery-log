@@ -15,13 +15,8 @@ export default{
      */
     checkLog: (logger)=> {
         let checkLogType = Object.prototype.toString;
-        if(typeof logger=='function'){
-            if(typeof logger()!=='object'){
-                this._console('if your logger file is a function,it should return a key/value object');
-                return false;
-            }
-        }else if(!(typeof logger=='object' && checkLogType.call(logger)=="[object Object]")){
-            this._console('your logger should be a object or a function which returns an object');
+        if(!(typeof logger=='object' && checkLogType.call(logger)=="[object Object]")){
+            this._console('your logger should be a pure key/value object');
             return false;
         }
     }
