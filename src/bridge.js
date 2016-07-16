@@ -5,17 +5,17 @@
  */
 import logCore from './core.js'
 let logBridge=function(){
-    let logMap={};
     //具体的执行逻辑
-    let ExecuteLog=(event)=>{
+    let ExecuteLog=(container,event)=>{
         return function(...args){
-            $[event](logCore.getLog(...args));
+            container[event](logCore.getLog(...args));
         }
     };
-    $.logger['_eventType'].forEach((event)=>{
-        logMap[event] = ExecuteLog(event);
-    });
-    return logMap;
+    return function(container){
+        $.logger['_eventType'].forEach((event)=>{
+            container[event] = ExecuteLog(contaner,event);
+        });
+    };
 };
 
 export default  logBridge;
