@@ -16,7 +16,7 @@
     import logFile from 'logFile的位置'；
     
     # 启用打点文件
-    $.logger.use(logFile)；
+    $('.test').logger.use(logFile)；
     
     # 打点事件,使用方式还是和之前的jqueryAPI一模一样
     $.logger.on('click','li',function(){
