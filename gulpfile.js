@@ -28,9 +28,6 @@ gulp.task('demo-webpack', function(done) {
       'webpack/hot/dev-server'//语法错误，也reload
   );
     //开发环境添加react-hot
-  config.module.loaders[0].loaders=[
-          'react-hot',//keep it mounted, preserving the state
-          'babel'];
   var compiler = webpack(config);
   var server = new WebpackDevServer(compiler, {
     hot: true,

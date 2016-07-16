@@ -1,11 +1,10 @@
 var path = require('path');
-var glob = require('glob');
 var webpack = require('webpack');
 var extend = require('extend');
 var config = require('../package.json');
 
 module.exports =extend({}, {
-    devtool: "source-map",
+    //devtool: "source-map",
     entry:[
         './example/src/index.js'
     ],
