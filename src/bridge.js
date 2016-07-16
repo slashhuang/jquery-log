@@ -13,7 +13,7 @@ let logBridge=function(){
     };
     return function(container){
         $.logger['_eventType'].forEach((event)=>{
-            container[event] = ExecuteLog(contaner,event);
+            container[event] = ExecuteLog(container,event);
         });
     };
 };

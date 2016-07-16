@@ -5,7 +5,7 @@ var map={
     }
 };
 $.logger.use(map);
-$('body').logger.on('click','.test',function(){
+$.logger('body').on('click','.test',function(){
     $(this).data('logName','test')
 });
 

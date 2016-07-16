@@ -20,7 +20,7 @@ $.fn.logger.init=function(container){
     let logger = logBridge(container);
     //将$.logger和logBridge做映射关系
     this._eventType.forEach((eventType)=>{
-        container.logger[eventType] = logger[eventType];
+        container[eventType] = logger[eventType];
     });
 };
 /**
