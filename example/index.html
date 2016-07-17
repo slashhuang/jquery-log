@@ -40,23 +40,35 @@
             color:gray;
             border-bottom: 1px solid #212121;
         }
+        .scroll-container{
+            height:500px;
+            overflow: scroll;
+        }
     </style>
 </head>
 <body>
 <div class="action">
     <div class="test" style="color:black;font-size: 20px">测试区</div>
     <div class="test click" data-city-id="10">
-        点击打点:cityId=10的dom元素
+        点击打点:`cityId=10`的dom元素
     </div>
     <div class="test click" data-city-id="12">
-        点击打点:cityId=12的dom元素
+        点击打点:`cityId=12`的dom元素
     </div>
-    <input class=" input" placeholder="输入框input改变打点" data-type="search" autofocus/>
+    <input class=" input" placeholder="输入框input改变打点" data-type="search"/>
+    <div class="scroll-container test" data-log-key="scroll" data-area="bottom">
+            滚动触打点:`area=bottom`
+    </div>
 </div>
 
 <dl class="show-result">
-    <dt style="color:black;font-size: 20px;text-align: center">打点展示区</dt>
+    <dt style="color:black;font-size: 20px;text-align: center">打点展示区<button id="clear">清空</button></dt>
 </dl>
 <script src="bundle/bundle.js"></script>
+<script>
+    $('#clear').click(function(){
+        $('.show-result dd').remove();
+    })
+</script>
 </body>
 </html>

@@ -1,10 +1,9 @@
 /**
  * build by slashhuang 16.7.17
+ * 主程序入口
  */
 import logCore from './core.js';
 import {checkLog} from './utils/checker.js';
-
-
 
 $.fn.logger=function(){
     let container = $(this);
@@ -14,7 +13,11 @@ $.fn.logger=function(){
 /**
  * 兼容所有事件类型,方法类型
  */
-$.fn.logger._eventType=['on', 'click','blur','focus', 'load','beforeunload', 'mouseover','mouseenter','change','input','scroll'];
+$.fn.logger._eventType=[
+    'on', 'click','blur','focus', 'load','beforeunload',
+    'mouseover','mouseenter',
+    'change','input','keyup',
+    'scroll'];
 /**
  * @param container jquery对象
  */

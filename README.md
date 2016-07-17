@@ -12,13 +12,18 @@
     # 引入模块
     import logger from 'jquery-logger';
     
-    # 引入打点文件
-    import logFile from 'logFile的位置'；
+    # 引入打点文件 
+    import map from './logMap.js';
     
-    # 启用打点文件
-    $.logger.use(logFile)；
+    //启用日志文件
+    $.logger.use(map);
     
-    # 打点事件,使用方式还是和之前的jqueryAPI一模一样,只不过加了一层logger中间件
+    //设置日志处理模块，可以分文件配置，也可以直接全局配置
+    $.logger.executor=(log)=>{
+        $('.show-result').append('<dd>打点日志为'+JSON.stringify(log)+'</dd>')
+    };
+    
+    //实际调用。打点事件,使用方式还是和之前的jqueryAPI一模一样,只不过加了一层logger中间件
     $('.test').logger().on('click','li',function(){
    
         //在这里设置你的logKey，如果已在对应dom中存储了data-log-key，则不需要这一步
@@ -26,15 +31,6 @@
         
         //do your logic
     })
-    ====实际上的效果====>
-    $('.test').on('click','li',function(){
-            //在这里设置你的logKey，如果已在对应dom中存储了data-log-key，则不需要这一步
-            let key = $(this).data('logKey','clickLi');
-            //do your logic
-            //打点代码
-            $.logger['logModule'](key);
-            
-        })
   
 ```
 

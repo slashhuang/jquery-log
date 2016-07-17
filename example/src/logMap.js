@@ -19,11 +19,18 @@ export default {
     mouseover:{
         action:'mouseover'
     },
-    change:function(){
+    blur:function(){
         let type = $(this).data('type');
         return   {
             action:'change input',
             type:type
+        }
+    },
+    scroll:function(){
+        let area = $(this).data('type');
+        return {
+            action:'scroll',
+            area:area
         }
     }
 };

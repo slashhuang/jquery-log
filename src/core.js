@@ -28,7 +28,10 @@ let logUtils={
             _this =this,
             finalCallback=function(...args){
                 callback.apply(this,args);
-                _this.triggerLogger.apply(this,args);
+                //如果设置了logger为false，则不进行logger
+                if(!$(this).data('stopLog')){
+                    _this.triggerLogger.apply(this,args);
+                }
             };
         args.push(finalCallback);
         return args;
@@ -54,7 +57,7 @@ let logUtils={
             logArgs= dealKey;
         }
         //执行打点
-        debugger;
+
         $.fn.logger.executor(logArgs);
     }
 };
