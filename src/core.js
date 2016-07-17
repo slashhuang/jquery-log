@@ -3,15 +3,22 @@
  * 执行打点
  */
 
-export default {
-    //存储打点模块
-    logModule:{},
+
+let logCore = function (eventType){
+    return function(...args){
+        //将方法重定向到jQuery的方法
+        let container = this;
+        $.fn[eventType].apply(container,logUtils.transArgs(...args));
+    }
+};
+
+let logUtils={
     /**
      * 修改回调函数，嵌入打点
      * @param callback
      * @return {Function}
      */
-    getLog:(...args)=>{
+    transArgs:function(...args){
         let callback = args.pop(),
             _this =this,
             finalCallback=function(...args){
@@ -31,17 +38,16 @@ export default {
      * 打点模块
      */
     triggerLogger:function(...args){
-        let _this = this;
-        let getParams=(...args)=>{
-                let $this =$(_this);
-                let keyName=$this.data('logName');
-                let dealKey = $.fn.logger.logModule[keyName];
-                if(typeof dealKey =='function'){
-                    return  dealKey.apply(this,...args);
-                }else if(typeof dealKey=='object'){
-                    return dealKey;
-                }
-        };
-       alert(JSON.stringify(getParams(args)))
+        let $this =$(this);
+        let keyName=$this.data('logKey');
+        let dealKey = $.fn.logger.logModule[keyName];
+        let logArgs = {};
+        if(typeof dealKey =='function'){
+            logArgs=  dealKey.apply(this,...args);
+        }else if(typeof dealKey=='object'){
+            logArgs= dealKey;
+        }
+       alert(JSON.stringify(logArgs))
     }
 };
+export default logCore;

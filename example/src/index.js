@@ -5,7 +5,8 @@ var map={
     }
 };
 $.logger.use(map);
-$.logger('body').on('click','.test',function(){
-    $(this).data('logName','test')
+$('body').logger().on('click','.test',function(){
+    $(this).data('logKey','test');
+    alert('callbackcalling')
 });
 
