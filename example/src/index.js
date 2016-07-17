@@ -1,4 +1,5 @@
 require('../../src/index.js');
+require('../public.less');
 var map={
     click:{
         action:'clicked'
