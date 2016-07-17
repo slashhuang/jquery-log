@@ -2,22 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script  src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>jquery项目打点模块</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
     <style>
-        .test{
+        *{
+            box-sizing: border-box;
+        }
+        .action{
+            float:left;
+            width:60%;
+            border-right:1px solid orangered
+        }
+        .show-result{
+            float:right;
+            width:38%;
+        }
+        dt,dd{
+            padding:20px;
+            background:coral;
+            border-bottom:1px solid white;
+        }
+        .click,.test{
             background:green;
             padding:20px;
             color:white;
             text-align: center;
-            cursor: pointer;
+            font-size:16px;
+            width:100%;
+            border-bottom:1px solid white;
+        }
+        .input{
+            outline: none;
+            border:none;
         }
     </style>
 </head>
 <body>
-<div class="test">
-    点击打点
+<div class="action">
+    <div class="test">请测试打点</div>
+    <div class="test click">
+        点击打点
+    </div>
+    <input class="test input" placeholder="输入框input打点" autofocus/>
 </div>
+
+<dl class="show-result">
+    <dt>结果显示区</dt>
+</dl>
 <script src="bundle/bundle.js"></script>
 </body>
 </html>

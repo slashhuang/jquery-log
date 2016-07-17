@@ -8,7 +8,12 @@ let logCore = function (eventType){
     return function(...args){
         //将方法重定向到jQuery的方法
         let container = this;
-        $.fn[eventType].apply(container,logUtils.transArgs(...args));
+        //采用统一的jquery方式
+        if(eventType=='on'){
+            $.fn.on.apply(container,logUtils.transArgs(...args));
+        }else{
+            $.fn.on.apply(container,[eventType,...logUtils.transArgs(...args)])
+        }
     }
 };
 
@@ -43,11 +48,11 @@ let logUtils={
         let dealKey = $.fn.logger.logModule[keyName];
         let logArgs = {};
         if(typeof dealKey =='function'){
-            logArgs=  dealKey.apply(this,...args);
+            logArgs =  dealKey.apply(this,...args);
         }else if(typeof dealKey=='object'){
             logArgs= dealKey;
         }
-       alert(JSON.stringify(logArgs))
+       console.log(JSON.stringify(logArgs))
     }
 };
 export default logCore;
