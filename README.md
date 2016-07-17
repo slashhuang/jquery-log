@@ -46,11 +46,5 @@
 	#demo测试	
 	npm run demo	
 ```
-container.on('',()=>{
-})
-container.on=function(a,b){
-    container.on(a,b1)
-
-}
 
 
