@@ -29,6 +29,7 @@
             font-size:16px;
             width:100%;
             border-bottom:1px solid white;
+            cursor: pointer;
         }
         .input{
             outline: none;
@@ -44,16 +45,17 @@
 <body>
 <div class="action">
     <div class="test" style="color:black;font-size: 20px">测试区</div>
-    <div class="test click">
-        点击打点
+    <div class="test click" data-city-id="10">
+        点击打点:cityId=10的dom元素
     </div>
-    <input class=" input" placeholder="输入框input打点" autofocus/>
+    <div class="test click" data-city-id="12">
+        点击打点:cityId=12的dom元素
+    </div>
+    <input class=" input" placeholder="输入框input改变打点" data-type="search" autofocus/>
 </div>
 
 <dl class="show-result">
-    <dt style="color:black;font-size: 20px;text-align: center">展示区</dt>
-    <dd>点击打点显示区:</dd>
-    <dd>input改变事件打点显示区:</dd>
+    <dt style="color:black;font-size: 20px;text-align: center">打点展示区</dt>
 </dl>
 <script src="bundle/bundle.js"></script>
 </body>

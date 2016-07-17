@@ -43,6 +43,7 @@ let logUtils={
      * 打点模块
      */
     triggerLogger:function(...args){
+        //获取打点参数
         let $this =$(this);
         let keyName=$this.data('logKey');
         let dealKey = $.fn.logger.logModule[keyName];
@@ -52,7 +53,9 @@ let logUtils={
         }else if(typeof dealKey=='object'){
             logArgs= dealKey;
         }
-       console.log(JSON.stringify(logArgs))
+        //执行打点
+        debugger;
+        $.fn.logger.executor(logArgs);
     }
 };
 export default logCore;

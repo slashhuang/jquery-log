@@ -14,7 +14,7 @@ $.fn.logger=function(){
 /**
  * 兼容所有事件类型,方法类型
  */
-$.fn.logger._eventType=['on', 'click','blur','focus', 'load','beforeunload', 'mouseover','mouseenter','change','input'];
+$.fn.logger._eventType=['on', 'click','blur','focus', 'load','beforeunload', 'mouseover','mouseenter','change','input','scroll'];
 /**
  * @param container jquery对象
  */
