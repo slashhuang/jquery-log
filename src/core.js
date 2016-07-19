@@ -27,12 +27,18 @@ let logUtils={
         let callback = args.pop(),
             _this =this,
             finalCallback=function(...args){
-                callback.apply(this,args);
+                if(typeof callback=='function'){
+                    callback && callback.apply(this,args);
+                }
                 //如果设置了logger为false，则不进行logger
                 if(!$(this).data('stopLog')){
                     _this.triggerLogger.apply(this,args);
                 }
             };
+        //如果最后一个参数不是函数，则还是塞回去
+        if(typeof callback!='function'){
+            args.push(callback);
+        }
         args.push(finalCallback);
         return args;
     },

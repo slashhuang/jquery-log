@@ -5,6 +5,7 @@ import map from './logMap.js';
 $.logger.use(map);
 //设置日志处理模块，可以分文件配置，也可以直接全局配置
 $.logger.executor=(log)=>{
+
     $('.show-result').append('<dd>打点日志为'+JSON.stringify(log)+'</dd>')
 };
 //调用
