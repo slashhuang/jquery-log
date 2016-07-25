@@ -1,9 +1,9 @@
 {
-  "name": "jquery-logger",
+  "name": "jquery-log",
   "version": "0.1.1",
   "description": "a logger system for jquery project",
   "main": "lib/",
-  "repository": "git@github.com:slashhuang/jquery-logger.git",
+  "repository": "git@github.com:slashhuang/jquery-loggit",
   "keywords": [
     "log",
     "jquery"
@@ -58,9 +58,9 @@
     "webpack-dev-server": "^1.10.1"
   },
   "bugs": {
-    "url": "https://github.com/slashhuang/jquery-logger/issues"
+    "url": "https://github.com/slashhuang/jquery-log/issues"
   },
-  "homepage": "https://github.com/slashhuang/jquery-logger.git",
+  "homepage": "https://github.com/slashhuang/jquery-log.git",
   "dependencies": {
     "jquery": "^3.1.0"
   }

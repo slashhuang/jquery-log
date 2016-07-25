@@ -1,6 +1,6 @@
-# jquery-logger
+# jquery-log
 
-> a logger system for jquery project
+> a log system for jquery project
 
 ## features[特点]
 1. 打点代码和业务逻辑代码分离
@@ -10,7 +10,7 @@
 ```javascript
 
     # 引入模块
-    import logger from 'jquery-logger';
+    import logger from 'jquery-log';
     
     # 引入打点文件 
     import map from './logMap.js';
