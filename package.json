@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "a logger system for jquery project",
   "main": "lib/",
-  "repository": "git@github.com:slashhuang/jquery-loggit",
+  "repository": "git@github.com:slashhuang/jquery-log.git",
   "keywords": [
     "log",
     "jquery"
